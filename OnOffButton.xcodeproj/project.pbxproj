@@ -13,6 +13,7 @@
 		01DCA6391A118B6000B048A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01DCA6381A118B6000B048A7 /* Images.xcassets */; };
 		01DCA63C1A118B6000B048A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DCA63A1A118B6000B048A7 /* LaunchScreen.xib */; };
 		01DCA6481A118B6000B048A7 /* OnOffButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCA6471A118B6000B048A7 /* OnOffButtonTests.swift */; };
+		01DCA6521A118BAC00B048A7 /* OnOffButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCA6511A118BAC00B048A7 /* OnOffButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		01DCA6411A118B6000B048A7 /* OnOffButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnOffButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01DCA6461A118B6000B048A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01DCA6471A118B6000B048A7 /* OnOffButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnOffButtonTests.swift; sourceTree = "<group>"; };
+		01DCA6511A118BAC00B048A7 /* OnOffButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnOffButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				01DCA6311A118B6000B048A7 /* AppDelegate.swift */,
 				01DCA6331A118B6000B048A7 /* ViewController.swift */,
+				01DCA6511A118BAC00B048A7 /* OnOffButton.swift */,
 				01DCA6351A118B6000B048A7 /* Main.storyboard */,
 				01DCA6381A118B6000B048A7 /* Images.xcassets */,
 				01DCA63A1A118B6000B048A7 /* LaunchScreen.xib */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01DCA6521A118BAC00B048A7 /* OnOffButton.swift in Sources */,
 				01DCA6341A118B6000B048A7 /* ViewController.swift in Sources */,
 				01DCA6321A118B6000B048A7 /* AppDelegate.swift in Sources */,
 			);
