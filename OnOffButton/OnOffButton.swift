@@ -49,12 +49,12 @@ class OnOffButton: UIButton {
         
         onOffLayer.fillColor = nil
         onOffLayer.strokeColor = UIColor.whiteColor().CGColor
-        onOffLayer.lineWidth = 4
-        onOffLayer.miterLimit = 4
+        onOffLayer.lineWidth = 6
+        onOffLayer.miterLimit = 6
         onOffLayer.lineCap = kCALineCapRound
         onOffLayer.masksToBounds = true
         
-        let strokingPath = CGPathCreateCopyByStrokingPath(onOffLayer.path, nil, 4, kCGLineCapRound, kCGLineJoinMiter, 4)
+        let strokingPath = CGPathCreateCopyByStrokingPath(onOffLayer.path, nil, 6, kCGLineCapRound, kCGLineJoinMiter, 6)
         
         onOffLayer.bounds = CGPathGetPathBoundingBox(strokingPath)
         onOffLayer.position = CGPoint(x: CGRectGetMidX(onOffLayer.bounds), y: CGRectGetMidY(onOffLayer.bounds))
@@ -78,20 +78,20 @@ class OnOffButton: UIButton {
             
             if self.checked {
                 strokeStart.toValue = onStrokeStart
-                strokeStart.duration = 0.5
-                //strokeStart.timingFunction = CAMediaTimingFunction(controlPoints: ?, ?, ?, ?)
+                strokeStart.duration = 0.6
+                strokeStart.timingFunction = CAMediaTimingFunction(controlPoints: 0.75,0.1,0.50,1.38)
                 
                 strokeEnd.toValue = onStrokeEnd
                 strokeEnd.duration = 0.6
-                //strokeEnd.timingFunction = CAMediaTimingFunction(controlPoints: ?, ?, ?, ?)
+                strokeEnd.timingFunction = CAMediaTimingFunction(controlPoints: 0.75,0.1,0.50,1.38)
             } else {
                 strokeStart.toValue = offStrokeStart
-                strokeStart.duration = 0.5
-                //strokeStart.timingFunction = CAMediaTimingFunction(controlPoints: ?, ?, ?, ?)
+                strokeStart.duration = 0.6
+                strokeStart.timingFunction = CAMediaTimingFunction(controlPoints: 0.45,-0.2,0.8,0.65)
                 
                 strokeEnd.toValue = offStrokeEnd
                 strokeEnd.duration = 0.6
-                //strokeEnd.timingFunction = CAMediaTimingFunction(controlPoints: ?, ?, ?, ?)
+                strokeEnd.timingFunction = CAMediaTimingFunction(controlPoints: 0.45,-0.2,0.8,0.65)
             }
             self.onOffLayer.applyAnimation(strokeStart)
             self.onOffLayer.applyAnimation(strokeEnd)
@@ -143,7 +143,10 @@ extension CALayer {
         }
         
         self.addAnimation(copy, forKey: copy.keyPath)
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
         self.setValue(copy.toValue, forKeyPath:copy.keyPath)
+        CATransaction.commit()
     }
 }
 
