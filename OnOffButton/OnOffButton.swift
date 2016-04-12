@@ -45,10 +45,10 @@ class OnOffButton: UIButton {
     private func createLayersIfNeeded() {
         if onOffLayer == nil {
             onOffLayer = CAShapeLayer()
-            onOffLayer.path = CGPath.rescaleForFrame(path: OnOff.innerPath, frame: self.bounds)
+            onOffLayer.path = CGPath.rescaleForFrame(OnOff.innerPath, frame: self.bounds)
             setUpShapeLayer(onOffLayer)
             onOffLayer.strokeColor = strokeColor.CGColor
-            let strokingPath = CGPathCreateCopyByStrokingPath(onOffLayer.path, nil, lineWidth, kCGLineCapRound, kCGLineJoinMiter, 10)
+            let strokingPath = CGPathCreateCopyByStrokingPath(onOffLayer.path, nil, lineWidth, CGLineCap.Round, CGLineJoin.Miter, 10)
             onOffLayer.bounds = CGPathGetPathBoundingBox(strokingPath)
             onOffLayer.position = CGPoint(x: CGRectGetMidX(onOffLayer.bounds), y: CGRectGetMidY(onOffLayer.bounds))
             onOffLayer.strokeStart = onStrokeStart
