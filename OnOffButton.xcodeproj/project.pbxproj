@@ -14,8 +14,6 @@
 		01DCA63C1A118B6000B048A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DCA63A1A118B6000B048A7 /* LaunchScreen.xib */; };
 		01DCA6481A118B6000B048A7 /* OnOffButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCA6471A118B6000B048A7 /* OnOffButtonTests.swift */; };
 		01DCA6521A118BAC00B048A7 /* OnOffButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCA6511A118BAC00B048A7 /* OnOffButton.swift */; };
-		01F5EC321A86C3A0000D12A0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5EC301A86C3A0000D12A0 /* Extensions.swift */; };
-		01F5EC331A86C3A0000D12A0 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5EC311A86C3A0000D12A0 /* Paths.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +38,6 @@
 		01DCA6461A118B6000B048A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01DCA6471A118B6000B048A7 /* OnOffButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnOffButtonTests.swift; sourceTree = "<group>"; };
 		01DCA6511A118BAC00B048A7 /* OnOffButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnOffButton.swift; sourceTree = "<group>"; };
-		01F5EC301A86C3A0000D12A0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		01F5EC311A86C3A0000D12A0 /* Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +79,6 @@
 		01DCA62E1A118B6000B048A7 /* OnOffButton */ = {
 			isa = PBXGroup;
 			children = (
-				01F5EC301A86C3A0000D12A0 /* Extensions.swift */,
-				01F5EC311A86C3A0000D12A0 /* Paths.swift */,
 				01DCA6311A118B6000B048A7 /* AppDelegate.swift */,
 				01DCA6331A118B6000B048A7 /* ViewController.swift */,
 				01DCA6511A118BAC00B048A7 /* OnOffButton.swift */,
@@ -224,10 +218,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				01DCA6521A118BAC00B048A7 /* OnOffButton.swift in Sources */,
-				01F5EC331A86C3A0000D12A0 /* Paths.swift in Sources */,
 				01DCA6341A118B6000B048A7 /* ViewController.swift in Sources */,
 				01DCA6321A118B6000B048A7 /* AppDelegate.swift in Sources */,
-				01F5EC321A86C3A0000D12A0 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

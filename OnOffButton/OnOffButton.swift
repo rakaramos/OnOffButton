@@ -69,15 +69,17 @@ class OnOffButton: UIButton {
         updateProperties()
     }
     
+    // MARK: Layout
+    
     private func updateProperties() {
         createLayersIfNeeded()
         if onOffLayer != nil {
-            onOffLayer.lineWidth = lineWidth
+            onOffLayer.lineWidth   = lineWidth
             onOffLayer.strokeColor = strokeColor.CGColor
         }
         
         if ringLayer != nil {
-            ringLayer.lineWidth = lineWidth
+            ringLayer.lineWidth   = lineWidth
             ringLayer.strokeColor = ringColorWithAlpha()
         }
     }
@@ -164,5 +166,79 @@ class OnOffButton: UIButton {
         strokeEnd.timingFunction = CAMediaTimingFunction(controlPoints: 0.45, -0.2, 0.8, 0.65)
         
         return (strokeStart, strokeEnd)
+    }
+}
+
+// MARK: Path
+
+struct OnOff {
+    static var innerPath: CGPath {
+        let path = CGPathCreateMutable()
+        CGPathMoveToPoint(path, nil, 60.48, 17.5)
+        CGPathAddLineToPoint(path, nil, 31.63, 46.34)
+        CGPathAddLineToPoint(path, nil, 5.05, 19.76)
+        CGPathAddCurveToPoint(path, nil, 13.84, 2.51, 34.92, -4.33, 52.15, 4.44)
+        CGPathAddCurveToPoint(path, nil, 69.37, 13.22, 76.22, 34.3, 67.44, 51.53)
+        CGPathAddCurveToPoint(path, nil, 58.67, 68.75, 37.59, 75.6, 20.36, 66.82)
+        CGPathAddCurveToPoint(path, nil, 3.14, 58.05, -3.71, 36.97, 5.07, 19.74)
+        return path
+    }
+    
+    static func ringPathForFrame(frame: CGRect) -> CGPath {
+        let outerPath = UIBezierPath(ovalInRect: frame)
+        return outerPath.CGPath
+    }
+}
+
+// MARK: Extensions
+
+extension CALayer {
+    func applyAnimation(animation: CABasicAnimation) {
+        let copy = animation.copy() as? CABasicAnimation ?? CABasicAnimation()
+        if  copy.fromValue == nil,
+            let presentationLayer = presentationLayer() {
+            copy.fromValue = presentationLayer.valueForKeyPath(copy.keyPath ?? "")
+        }
+        addAnimation(copy, forKey: copy.keyPath)
+        performWithoutAnimation {
+            self.setValue(copy.toValue, forKeyPath:copy.keyPath ??  "")
+        }
+    }
+    
+    func performWithoutAnimation(closure: Void -> Void) {
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        closure()
+        CATransaction.commit()
+    }
+}
+
+extension CGPath {
+    //scaling :http://www.google.com/url?q=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F15643626%2Fscale-cgpath-to-fit-uiview&sa=D&sntz=1&usg=AFQjCNGKPDZfy0-_lkrj3IfWrTGp96QIFQ
+    //nice answer from David Rönnqvist!
+    class func rescaleForFrame(path: CGPath, frame: CGRect) -> CGPath {
+        let boundingBox            = CGPathGetBoundingBox(path)
+        let boundingBoxAspectRatio = CGRectGetWidth(boundingBox)/CGRectGetHeight(boundingBox)
+        let viewAspectRatio        = CGRectGetWidth(frame)/CGRectGetHeight(frame)
+        
+        var scaleFactor: CGFloat = 1.0
+        if (boundingBoxAspectRatio > viewAspectRatio) {
+            scaleFactor = CGRectGetWidth(frame)/CGRectGetWidth(boundingBox)
+        } else {
+            scaleFactor = CGRectGetHeight(frame)/CGRectGetHeight(boundingBox)
+        }
+        
+        var scaleTransform = CGAffineTransformIdentity
+        scaleTransform     = CGAffineTransformScale(scaleTransform, scaleFactor, scaleFactor)
+        scaleTransform     = CGAffineTransformTranslate(scaleTransform, -CGRectGetMinX(boundingBox), -CGRectGetMinY(boundingBox))
+        let scaledSize     = CGSizeApplyAffineTransform(boundingBox.size, CGAffineTransformMakeScale(scaleFactor, scaleFactor))
+        let centerOffset   = CGSizeMake((CGRectGetWidth(frame)-scaledSize.width)/(scaleFactor*2.0), (CGRectGetHeight(frame)-scaledSize.height)/(scaleFactor*2.0))
+        scaleTransform     = CGAffineTransformTranslate(scaleTransform, centerOffset.width, centerOffset.height)
+        
+        if let resultPath = CGPathCreateCopyByTransformingPath(path, &scaleTransform) {
+            return resultPath
+        }
+        
+        return path
     }
 }
