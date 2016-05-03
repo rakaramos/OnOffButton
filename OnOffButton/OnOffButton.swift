@@ -72,6 +72,9 @@ class OnOffButton: UIButton {
     // MARK: Layout
     
     private func updateProperties() {
+        // using init() will raise CGPostError, lets prevent it
+        if bounds == CGRectZero { return }
+        
         createLayersIfNeeded()
         if onOffLayer != nil {
             onOffLayer.lineWidth   = lineWidth
