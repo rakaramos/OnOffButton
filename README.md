@@ -1,20 +1,60 @@
 Custom On/Off Animated UIButton, written in Swift. By Creativedash
 ===========
 
-
+[![Version](https://img.shields.io/cocoapods/v/OnOffButton.svg?style=flat)](http://cocoapods.org/pods/OnOffButton)
+[![License](https://img.shields.io/cocoapods/l/OnOffButton.svg?style=flat)](http://cocoapods.org/pods/OnOffButton)
+[![Platform](https://img.shields.io/cocoapods/p/OnOffButton.svg?style=flat)](http://cocoapods.org/pods/OnOffButton)
 
 ## About
 This control is inspired on this Creative Dash dribbble:
 ![alt tag](https://d13yacurqjgara.cloudfront.net/users/107759/screenshots/1631598/onoff.gif)
 
 ## Installation
-For now, you need to copy the `OnOffButton.swift` into your project.
+
+### [Carthage]
+
+[Carthage]: https://github.com/Carthage/Carthage
+
+Add the following to your Cartfile:
+
+```
+github "rakaramos/OnOffButton"
+```
+
+Then run `carthage update`.
+
+Follow the current instructions in [Carthage's README][carthage-installation]
+for up to date installation instructions.
+
+[carthage-installation]: https://github.com/Carthage/Carthage#adding-frameworks-to-an-application
+
+### [CocoaPods]
+
+[CocoaPods]: http://cocoapods.org
+
+Add the following to your [Podfile](http://guides.cocoapods.org/using/the-podfile.html):
+
+```ruby
+pod 'OnOffButton'
+```
+
+You will also need to make sure you're opting into using frameworks:
+
+```ruby
+use_frameworks!
+```
+
+Then run `pod install` with CocoaPods 0.36 or newer.
+
+
+### Manually
+Just copy the `OnOffButton.swift` into your project.
 
 ## Implementation
 
 After the installation, you can use it straight in code or with xib/storyboard.
 
-- In code:
+### In code:
 
 ```swift
 class ViewController: UIViewController {
@@ -37,16 +77,12 @@ class ViewController: UIViewController {
     func didTapOnOffButton() {
         onOffButton.checked = !onOffButton.checked
     }
-    
-    @IBAction func changeButtonState(sender: OnOffButton) {
-        sender.checked = !sender.checked
-    }
 }
 ```
 
-- Using `@IBDesignables`
+### Using `@IBDesignables`
 
-Set your `UIButton` to use `OnOffButton`:
+Set the `UIButton` class to use `OnOffButton`:
 
 ![alt tag](https://cloud.githubusercontent.com/assets/7672056/14966575/95d2de1e-1089-11e6-8e22-6beb549c806b.png)
 
@@ -64,9 +100,6 @@ Create an `IBAction`:
 
 
 Profit ;)
-
-## TODO
-Make it available through Cocoapods and Carthage.
 
 ## License
 Released under the MIT license. See the LICENSE file for more info.
