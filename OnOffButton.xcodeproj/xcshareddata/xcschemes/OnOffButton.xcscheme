@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "01DCA62B1A118B6000B048A7"
-               BuildableName = "OnOffButton.app"
+               BlueprintIdentifier = "926B14941CDA2B8F00785834"
+               BuildableName = "OnOffButton.framework"
                BlueprintName = "OnOffButton"
                ReferencedContainer = "container:OnOffButton.xcodeproj">
             </BuildableReference>
@@ -42,8 +42,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "01DCA62B1A118B6000B048A7"
-            BuildableName = "OnOffButton.app"
+            BlueprintIdentifier = "926B14941CDA2B8F00785834"
+            BuildableName = "OnOffButton.framework"
             BlueprintName = "OnOffButton"
             ReferencedContainer = "container:OnOffButton.xcodeproj">
          </BuildableReference>
@@ -65,8 +65,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "01DCA62B1A118B6000B048A7"
-            BuildableName = "OnOffButton.app"
+            BlueprintIdentifier = "926B14941CDA2B8F00785834"
+            BuildableName = "OnOffButton.framework"
             BlueprintName = "OnOffButton"
             ReferencedContainer = "container:OnOffButton.xcodeproj">
          </BuildableReference>
@@ -84,8 +84,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "01DCA62B1A118B6000B048A7"
-            BuildableName = "OnOffButton.app"
+            BlueprintIdentifier = "926B14941CDA2B8F00785834"
+            BuildableName = "OnOffButton.framework"
             BlueprintName = "OnOffButton"
             ReferencedContainer = "container:OnOffButton.xcodeproj">
          </BuildableReference>
