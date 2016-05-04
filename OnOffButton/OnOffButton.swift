@@ -1,7 +1,7 @@
 import UIKit
 
 @IBDesignable
-class OnOffButton: UIButton {
+public class OnOffButton: UIButton {
     
     // MARK: Inspectables
     
@@ -59,12 +59,12 @@ class OnOffButton: UIButton {
         updateProperties()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         updateProperties()
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         updateProperties()
     }
