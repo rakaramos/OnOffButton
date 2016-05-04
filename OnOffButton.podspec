@@ -19,6 +19,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source       = { :git => 'https://github.com/rakaramos/OnOffButton.git', :tag => s.version }
-  s.source_files  = 'OnOffButton/OnOffButton.swift'
+  s.source_files  = 'Sources/*.swift'
 
  end

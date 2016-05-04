@@ -7,83 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01DCA6321A118B6000B048A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCA6311A118B6000B048A7 /* AppDelegate.swift */; };
-		01DCA6341A118B6000B048A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCA6331A118B6000B048A7 /* ViewController.swift */; };
-		01DCA6371A118B6000B048A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DCA6351A118B6000B048A7 /* Main.storyboard */; };
-		01DCA6391A118B6000B048A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01DCA6381A118B6000B048A7 /* Images.xcassets */; };
-		01DCA63C1A118B6000B048A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DCA63A1A118B6000B048A7 /* LaunchScreen.xib */; };
-		01DCA6481A118B6000B048A7 /* OnOffButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCA6471A118B6000B048A7 /* OnOffButtonTests.swift */; };
-		01DCA6521A118BAC00B048A7 /* OnOffButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCA6511A118BAC00B048A7 /* OnOffButton.swift */; };
-		926B14281CDA27DC00785834 /* OnOffControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 926B14271CDA27DC00785834 /* OnOffControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		926B142C1CDA27DC00785834 /* OnOffControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926B14251CDA27DB00785834 /* OnOffControl.framework */; };
-		926B142D1CDA27DC00785834 /* OnOffControl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 926B14251CDA27DB00785834 /* OnOffControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		926B14981CDA2B8F00785834 /* OnOffButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 926B14971CDA2B8F00785834 /* OnOffButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		926B149E1CDA2BA900785834 /* OnOffButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926B149D1CDA2BA900785834 /* OnOffButton.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		01DCA6421A118B6000B048A7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 01DCA6241A118B6000B048A7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 01DCA62B1A118B6000B048A7;
-			remoteInfo = OnOffButton;
-		};
-		926B142A1CDA27DC00785834 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 01DCA6241A118B6000B048A7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 926B14241CDA27DB00785834;
-			remoteInfo = OnOffControl;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		926B14311CDA27DC00785834 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				926B142D1CDA27DC00785834 /* OnOffControl.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		01DCA62C1A118B6000B048A7 /* OnOffButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnOffButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01DCA6301A118B6000B048A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01DCA6311A118B6000B048A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		01DCA6331A118B6000B048A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		01DCA6361A118B6000B048A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		01DCA6381A118B6000B048A7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		01DCA63B1A118B6000B048A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		01DCA6411A118B6000B048A7 /* OnOffButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnOffButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01DCA6461A118B6000B048A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01DCA6471A118B6000B048A7 /* OnOffButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnOffButtonTests.swift; sourceTree = "<group>"; };
-		01DCA6511A118BAC00B048A7 /* OnOffButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnOffButton.swift; sourceTree = "<group>"; };
-		926B14251CDA27DB00785834 /* OnOffControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OnOffControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		926B14271CDA27DC00785834 /* OnOffControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnOffControl.h; sourceTree = "<group>"; };
-		926B14291CDA27DC00785834 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		926B14951CDA2B8F00785834 /* OnOffButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OnOffButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		926B14971CDA2B8F00785834 /* OnOffButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnOffButton.h; sourceTree = "<group>"; };
+		926B14991CDA2B8F00785834 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		926B149D1CDA2BA900785834 /* OnOffButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnOffButton.swift; path = Sources/OnOffButton.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		01DCA6291A118B6000B048A7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				926B142C1CDA27DC00785834 /* OnOffControl.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		01DCA63E1A118B6000B048A7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		926B14211CDA27DB00785834 /* Frameworks */ = {
+		926B14911CDA2B8F00785834 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -98,7 +37,7 @@
 			children = (
 				01DCA62E1A118B6000B048A7 /* OnOffButton */,
 				01DCA6441A118B6000B048A7 /* OnOffButtonTests */,
-				926B14261CDA27DC00785834 /* OnOffControl */,
+				926B14961CDA2B8F00785834 /* OnOffButton */,
 				01DCA62D1A118B6000B048A7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,9 +45,7 @@
 		01DCA62D1A118B6000B048A7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				01DCA62C1A118B6000B048A7 /* OnOffButton.app */,
-				01DCA6411A118B6000B048A7 /* OnOffButtonTests.xctest */,
-				926B14251CDA27DB00785834 /* OnOffControl.framework */,
+				926B14951CDA2B8F00785834 /* OnOffButton.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,12 +53,7 @@
 		01DCA62E1A118B6000B048A7 /* OnOffButton */ = {
 			isa = PBXGroup;
 			children = (
-				01DCA6311A118B6000B048A7 /* AppDelegate.swift */,
-				01DCA6331A118B6000B048A7 /* ViewController.swift */,
-				01DCA6511A118BAC00B048A7 /* OnOffButton.swift */,
-				01DCA6351A118B6000B048A7 /* Main.storyboard */,
-				01DCA6381A118B6000B048A7 /* Images.xcassets */,
-				01DCA63A1A118B6000B048A7 /* LaunchScreen.xib */,
+				926B149D1CDA2BA900785834 /* OnOffButton.swift */,
 				01DCA62F1A118B6000B048A7 /* Supporting Files */,
 			);
 			path = OnOffButton;
@@ -152,82 +84,45 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		926B14261CDA27DC00785834 /* OnOffControl */ = {
+		926B14961CDA2B8F00785834 /* OnOffButton */ = {
 			isa = PBXGroup;
 			children = (
-				926B14271CDA27DC00785834 /* OnOffControl.h */,
-				926B14291CDA27DC00785834 /* Info.plist */,
+				926B14971CDA2B8F00785834 /* OnOffButton.h */,
+				926B14991CDA2B8F00785834 /* Info.plist */,
 			);
-			path = OnOffControl;
+			path = OnOffButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		926B14221CDA27DB00785834 /* Headers */ = {
+		926B14921CDA2B8F00785834 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				926B14281CDA27DC00785834 /* OnOffControl.h in Headers */,
+				926B14981CDA2B8F00785834 /* OnOffButton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		01DCA62B1A118B6000B048A7 /* OnOffButton */ = {
+		926B14941CDA2B8F00785834 /* OnOffButton */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 01DCA64B1A118B6000B048A7 /* Build configuration list for PBXNativeTarget "OnOffButton" */;
+			buildConfigurationList = 926B149A1CDA2B8F00785834 /* Build configuration list for PBXNativeTarget "OnOffButton" */;
 			buildPhases = (
-				01DCA6281A118B6000B048A7 /* Sources */,
-				01DCA6291A118B6000B048A7 /* Frameworks */,
-				01DCA62A1A118B6000B048A7 /* Resources */,
-				926B14311CDA27DC00785834 /* Embed Frameworks */,
+				926B14901CDA2B8F00785834 /* Sources */,
+				926B14911CDA2B8F00785834 /* Frameworks */,
+				926B14921CDA2B8F00785834 /* Headers */,
+				926B14931CDA2B8F00785834 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				926B142B1CDA27DC00785834 /* PBXTargetDependency */,
 			);
 			name = OnOffButton;
 			productName = OnOffButton;
-			productReference = 01DCA62C1A118B6000B048A7 /* OnOffButton.app */;
-			productType = "com.apple.product-type.application";
-		};
-		01DCA6401A118B6000B048A7 /* OnOffButtonTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 01DCA64E1A118B6000B048A7 /* Build configuration list for PBXNativeTarget "OnOffButtonTests" */;
-			buildPhases = (
-				01DCA63D1A118B6000B048A7 /* Sources */,
-				01DCA63E1A118B6000B048A7 /* Frameworks */,
-				01DCA63F1A118B6000B048A7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				01DCA6431A118B6000B048A7 /* PBXTargetDependency */,
-			);
-			name = OnOffButtonTests;
-			productName = OnOffButtonTests;
-			productReference = 01DCA6411A118B6000B048A7 /* OnOffButtonTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		926B14241CDA27DB00785834 /* OnOffControl */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 926B14301CDA27DC00785834 /* Build configuration list for PBXNativeTarget "OnOffControl" */;
-			buildPhases = (
-				926B14201CDA27DB00785834 /* Sources */,
-				926B14211CDA27DB00785834 /* Frameworks */,
-				926B14221CDA27DB00785834 /* Headers */,
-				926B14231CDA27DB00785834 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OnOffControl;
-			productName = OnOffControl;
-			productReference = 926B14251CDA27DB00785834 /* OnOffControl.framework */;
+			productReference = 926B14951CDA2B8F00785834 /* OnOffButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -241,14 +136,7 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Rafael Machado";
 				TargetAttributes = {
-					01DCA62B1A118B6000B048A7 = {
-						CreatedOnToolsVersion = 6.1;
-					};
-					01DCA6401A118B6000B048A7 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 01DCA62B1A118B6000B048A7;
-					};
-					926B14241CDA27DB00785834 = {
+					926B14941CDA2B8F00785834 = {
 						CreatedOnToolsVersion = 7.3;
 					};
 				};
@@ -266,32 +154,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				01DCA62B1A118B6000B048A7 /* OnOffButton */,
-				01DCA6401A118B6000B048A7 /* OnOffButtonTests */,
-				926B14241CDA27DB00785834 /* OnOffControl */,
+				926B14941CDA2B8F00785834 /* OnOffButton */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		01DCA62A1A118B6000B048A7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01DCA6371A118B6000B048A7 /* Main.storyboard in Resources */,
-				01DCA63C1A118B6000B048A7 /* LaunchScreen.xib in Resources */,
-				01DCA6391A118B6000B048A7 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		01DCA63F1A118B6000B048A7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		926B14231CDA27DB00785834 /* Resources */ = {
+		926B14931CDA2B8F00785834 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -301,64 +170,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		01DCA6281A118B6000B048A7 /* Sources */ = {
+		926B14901CDA2B8F00785834 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01DCA6521A118BAC00B048A7 /* OnOffButton.swift in Sources */,
-				01DCA6341A118B6000B048A7 /* ViewController.swift in Sources */,
-				01DCA6321A118B6000B048A7 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		01DCA63D1A118B6000B048A7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01DCA6481A118B6000B048A7 /* OnOffButtonTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		926B14201CDA27DB00785834 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				926B149E1CDA2BA900785834 /* OnOffButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		01DCA6431A118B6000B048A7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 01DCA62B1A118B6000B048A7 /* OnOffButton */;
-			targetProxy = 01DCA6421A118B6000B048A7 /* PBXContainerItemProxy */;
-		};
-		926B142B1CDA27DC00785834 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 926B14241CDA27DB00785834 /* OnOffControl */;
-			targetProxy = 926B142A1CDA27DC00785834 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		01DCA6351A118B6000B048A7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				01DCA6361A118B6000B048A7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		01DCA63A1A118B6000B048A7 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				01DCA63B1A118B6000B048A7 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		01DCA6491A118B6000B048A7 /* Debug */ = {
@@ -441,78 +261,11 @@
 			};
 			name = Release;
 		};
-		01DCA64C1A118B6000B048A7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = OnOffButton/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = OnOffButton;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = OnOffButton.h;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		01DCA64D1A118B6000B048A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = OnOffButton/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = OnOffButton;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = OnOffButton.h;
-			};
-			name = Release;
-		};
-		01DCA64F1A118B6000B048A7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OnOffButtonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "RM.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OnOffButtonTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnOffButton.app/OnOffButton";
-			};
-			name = Debug;
-		};
-		01DCA6501A118B6000B048A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OnOffButtonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "RM.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OnOffButtonTests-Bridging-Header.h";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnOffButton.app/OnOffButton";
-			};
-			name = Release;
-		};
-		926B142E1CDA27DC00785834 /* Debug */ = {
+		926B149B1CDA2B8F00785834 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -520,22 +273,24 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = OnOffControl/Info.plist;
+				INFOPLIST_FILE = OnOffButton/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = RM.OnOffControl;
+				PRODUCT_BUNDLE_IDENTIFIER = RM.OnOffButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		926B142F1CDA27DC00785834 /* Release */ = {
+		926B149C1CDA2B8F00785834 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -544,11 +299,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = OnOffControl/Info.plist;
+				INFOPLIST_FILE = OnOffButton/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = RM.OnOffControl;
+				PRODUCT_BUNDLE_IDENTIFIER = RM.OnOffButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -568,32 +323,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		01DCA64B1A118B6000B048A7 /* Build configuration list for PBXNativeTarget "OnOffButton" */ = {
+		926B149A1CDA2B8F00785834 /* Build configuration list for PBXNativeTarget "OnOffButton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				01DCA64C1A118B6000B048A7 /* Debug */,
-				01DCA64D1A118B6000B048A7 /* Release */,
+				926B149B1CDA2B8F00785834 /* Debug */,
+				926B149C1CDA2B8F00785834 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		01DCA64E1A118B6000B048A7 /* Build configuration list for PBXNativeTarget "OnOffButtonTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				01DCA64F1A118B6000B048A7 /* Debug */,
-				01DCA6501A118B6000B048A7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		926B14301CDA27DC00785834 /* Build configuration list for PBXNativeTarget "OnOffControl" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				926B142E1CDA27DC00785834 /* Debug */,
-				926B142F1CDA27DC00785834 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
