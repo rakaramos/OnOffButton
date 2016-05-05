@@ -5,19 +5,19 @@ public class OnOffButton: UIButton {
     
     // MARK: Inspectables
     
-    @IBInspectable var lineWidth: CGFloat = 1 {
+    @IBInspectable public var lineWidth: CGFloat = 1 {
         didSet {
             updateProperties()
         }
     }
     
-    @IBInspectable var strokeColor: UIColor = UIColor.whiteColor() {
+    @IBInspectable public var strokeColor: UIColor = UIColor.whiteColor() {
         didSet {
             updateProperties()
         }
     }
     
-    @IBInspectable var ringAlpha: CGFloat = 0.5 {
+    @IBInspectable public var ringAlpha: CGFloat = 0.5 {
         didSet {
             updateProperties()
         }
@@ -25,7 +25,7 @@ public class OnOffButton: UIButton {
     
     // MARK: Variables
     
-    var checked: Bool = true {
+    public var checked: Bool = true {
         didSet {
             var strokeStart = CABasicAnimation()
             var strokeEnd = CABasicAnimation()
