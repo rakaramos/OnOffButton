@@ -9,6 +9,14 @@ Custom On/Off Animated UIButton, written in Swift. By Creativedash
 This control is inspired on this Creative Dash dribbble:
 ![alt tag](https://d13yacurqjgara.cloudfront.net/users/107759/screenshots/1631598/onoff.gif)
 
+## Swift Upgrade
+
+Use tags to fit your Swift version:
+
+Swift 3   => `1.4`
+
+Swift 2.3 => `1.3`
+
 ## Installation
 
 ### [Carthage]
