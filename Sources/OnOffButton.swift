@@ -105,8 +105,8 @@ public class OnOffButton: UIButton {
         let onOffLayer = CAShapeLayer()
         onOffLayer.path = CGPath.rescaleForFrame(OnOff.innerPath, frame: self.bounds)
         
-        let strokingPath       = CGPathCreateCopyByStrokingPath(onOffLayer.path, nil, lineWidth, .Round, .Miter, miterLimit)
-        onOffLayer.bounds      = CGPathGetPathBoundingBox(strokingPath)
+        let strokingPath       = CGPathCreateCopyByStrokingPath(onOffLayer.path!, nil, lineWidth, .Round, .Miter, miterLimit)
+        onOffLayer.bounds      = CGPathGetPathBoundingBox(strokingPath!)
         onOffLayer.position    = CGPoint(x: CGRectGetMidX(onOffLayer.bounds), y: CGRectGetMidY(onOffLayer.bounds))
         onOffLayer.strokeStart = onStrokeStart
         onOffLayer.strokeEnd   = onStrokeEnd
