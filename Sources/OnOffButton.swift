@@ -1,23 +1,23 @@
 import UIKit
 
 @IBDesignable
-public class OnOffButton: UIButton {
+open class OnOffButton: UIButton {
     
     // MARK: Inspectables
     
-    @IBInspectable public var lineWidth: CGFloat = 1 {
+    @IBInspectable open var lineWidth: CGFloat = 1 {
         didSet {
             updateProperties()
         }
     }
     
-    @IBInspectable public var strokeColor: UIColor = UIColor.whiteColor() {
+    @IBInspectable open var strokeColor: UIColor = UIColor.white {
         didSet {
             updateProperties()
         }
     }
     
-    @IBInspectable public var ringAlpha: CGFloat = 0.5 {
+    @IBInspectable open var ringAlpha: CGFloat = 0.5 {
         didSet {
             updateProperties()
         }
@@ -25,7 +25,7 @@ public class OnOffButton: UIButton {
     
     // MARK: Variables
     
-    public var checked: Bool = true {
+    open var checked: Bool = true {
         didSet {
             var strokeStart = CABasicAnimation()
             var strokeEnd = CABasicAnimation()
@@ -44,13 +44,13 @@ public class OnOffButton: UIButton {
         }
     }
     
-    private var onOffLayer: CAShapeLayer!
-    private var ringLayer: CAShapeLayer!
-    private let onStrokeStart: CGFloat  = 0.025
-    private let onStrokeEnd : CGFloat   = 0.20
-    private let offStrokeStart: CGFloat = 0.268
-    private let offStrokeEnd: CGFloat   = 1.0
-    private let miterLimit: CGFloat     = 10
+    fileprivate var onOffLayer: CAShapeLayer!
+    fileprivate var ringLayer: CAShapeLayer!
+    fileprivate let onStrokeStart: CGFloat  = 0.025
+    fileprivate let onStrokeEnd : CGFloat   = 0.20
+    fileprivate let offStrokeStart: CGFloat = 0.268
+    fileprivate let offStrokeEnd: CGFloat   = 1.0
+    fileprivate let miterLimit: CGFloat     = 10
     
     // MARK: Initialization
     
@@ -64,21 +64,21 @@ public class OnOffButton: UIButton {
         updateProperties()
     }
     
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         updateProperties()
     }
     
     // MARK: Layout
     
-    private func updateProperties() {
+    fileprivate func updateProperties() {
         // using init() will raise CGPostError, lets prevent it
-        if bounds == CGRectZero { return }
+        if bounds == CGRect.zero { return }
         
         createLayersIfNeeded()
         if onOffLayer != nil {
             onOffLayer.lineWidth   = lineWidth
-            onOffLayer.strokeColor = strokeColor.CGColor
+            onOffLayer.strokeColor = strokeColor.cgColor
         }
         
         if ringLayer != nil {
@@ -89,7 +89,7 @@ public class OnOffButton: UIButton {
     
     // MARK: Layer Set Up
     
-    private func createLayersIfNeeded() {
+    fileprivate func createLayersIfNeeded() {
         if onOffLayer == nil {
             onOffLayer = createOnOffLayer()
             layer.addSublayer(onOffLayer)
@@ -101,24 +101,25 @@ public class OnOffButton: UIButton {
         }
     }
 
-    private func createOnOffLayer() -> CAShapeLayer {
+    fileprivate func createOnOffLayer() -> CAShapeLayer {
         let onOffLayer = CAShapeLayer()
-        onOffLayer.path = CGPath.rescaleForFrame(OnOff.innerPath, frame: self.bounds)
+        let path = CGPath.rescaleForFrame(OnOff.innerPath, frame: self.bounds)
+        onOffLayer.path = path
         
-        let strokingPath       = CGPathCreateCopyByStrokingPath(onOffLayer.path!, nil, lineWidth, .Round, .Miter, miterLimit)
-        onOffLayer.bounds      = CGPathGetPathBoundingBox(strokingPath!)
-        onOffLayer.position    = CGPoint(x: CGRectGetMidX(onOffLayer.bounds), y: CGRectGetMidY(onOffLayer.bounds))
+        let strokingPath       = CGPath(__byStroking: path, transform: nil, lineWidth: lineWidth, lineCap: .round, lineJoin: .miter, miterLimit: miterLimit)
+        onOffLayer.bounds      = strokingPath!.boundingBoxOfPath
+        onOffLayer.position    = CGPoint(x: onOffLayer.bounds.midX, y: onOffLayer.bounds.midY)
         onOffLayer.strokeStart = onStrokeStart
         onOffLayer.strokeEnd   = onStrokeEnd
-        onOffLayer.strokeColor = strokeColor.CGColor
+        onOffLayer.strokeColor = strokeColor.cgColor
         setUpShapeLayer(onOffLayer)
         
         return onOffLayer
     }
     
-    private func createRingLayer() -> CAShapeLayer {
+    fileprivate func createRingLayer() -> CAShapeLayer {
         let ringLayer = CAShapeLayer()
-        let boundsWithInsets  = CGRectInset(onOffLayer.bounds, lineWidth/2, lineWidth/2)
+        let boundsWithInsets  = onOffLayer.bounds.insetBy(dx: lineWidth/2, dy: lineWidth/2)
         let ovalPath          = OnOff.ringPathForFrame(boundsWithInsets)
         ringLayer.path        = ovalPath
         ringLayer.bounds      = onOffLayer.bounds
@@ -129,7 +130,7 @@ public class OnOffButton: UIButton {
         return ringLayer
     }
     
-    private func setUpShapeLayer(shapeLayer: CAShapeLayer) {
+    fileprivate func setUpShapeLayer(_ shapeLayer: CAShapeLayer) {
         shapeLayer.fillColor = nil
         shapeLayer.lineWidth = lineWidth
         shapeLayer.miterLimit = miterLimit
@@ -137,13 +138,13 @@ public class OnOffButton: UIButton {
         shapeLayer.masksToBounds = false
     }
     
-    private func ringColorWithAlpha() -> CGColor {
-        return strokeColor.colorWithAlphaComponent(ringAlpha).CGColor
+    fileprivate func ringColorWithAlpha() -> CGColor {
+        return strokeColor.withAlphaComponent(ringAlpha).cgColor
     }
     
     // MARK: Animations
     
-    private func checkedAnimation() -> (strokeStart: CABasicAnimation, strokeEnd: CABasicAnimation) {
+    fileprivate func checkedAnimation() -> (strokeStart: CABasicAnimation, strokeEnd: CABasicAnimation) {
         let strokeStart            = CABasicAnimation(keyPath: "strokeStart")
         strokeStart.toValue        = onStrokeStart
         strokeStart.duration       = 0.6
@@ -157,7 +158,7 @@ public class OnOffButton: UIButton {
         return (strokeStart, strokeEnd)
     }
     
-    private func unchekedAnimation() -> (strokeStart: CABasicAnimation, strokeEnd: CABasicAnimation) {
+    fileprivate func unchekedAnimation() -> (strokeStart: CABasicAnimation, strokeEnd: CABasicAnimation) {
         let strokeStart            = CABasicAnimation(keyPath: "strokeStart")
         strokeStart.toValue        = offStrokeStart
         strokeStart.duration       = 0.6
@@ -176,39 +177,40 @@ public class OnOffButton: UIButton {
 
 struct OnOff {
     static var innerPath: CGPath {
-        let path = CGPathCreateMutable()
-        CGPathMoveToPoint(path, nil, 60.48, 17.5)
-        CGPathAddLineToPoint(path, nil, 31.63, 46.34)
-        CGPathAddLineToPoint(path, nil, 5.05, 19.76)
-        CGPathAddCurveToPoint(path, nil, 13.84, 2.51, 34.92, -4.33, 52.15, 4.44)
-        CGPathAddCurveToPoint(path, nil, 69.37, 13.22, 76.22, 34.3, 67.44, 51.53)
-        CGPathAddCurveToPoint(path, nil, 58.67, 68.75, 37.59, 75.6, 20.36, 66.82)
-        CGPathAddCurveToPoint(path, nil, 3.14, 58.05, -3.71, 36.97, 5.07, 19.74)
+        let path = CGMutablePath()
+        path.move(to: CGPoint(x: 60.48, y: 17.5))
+        path.addLine(to: CGPoint(x: 31.63, y: 46.34))
+        path.addLine(to: CGPoint(x: 5.05, y: 19.76))
+        path.addCurve(to: CGPoint(x: 52.15, y: 4.44) , control1: CGPoint(x: 13.84, y: 2.51) , control2: CGPoint(x: 34.92, y: -4.33))
+        path.addCurve(to: CGPoint(x: 67.44, y: 51.53), control1: CGPoint(x: 69.37, y: 13.22), control2: CGPoint(x: 76.22, y: 34.3))
+        path.addCurve(to: CGPoint(x: 20.36, y: 66.82), control1: CGPoint(x: 58.67, y: 68.75), control2: CGPoint(x: 37.59, y: 75.6))
+        path.addCurve(to: CGPoint(x: 5.07, y: 19.74) , control1: CGPoint(x: 3.14, y: 58.05) , control2: CGPoint(x: -3.71, y: 36.97))
+        
         return path
     }
     
-    static func ringPathForFrame(frame: CGRect) -> CGPath {
-        let outerPath = UIBezierPath(ovalInRect: frame)
-        return outerPath.CGPath
+    static func ringPathForFrame(_ frame: CGRect) -> CGPath {
+        let outerPath = UIBezierPath(ovalIn: frame)
+        return outerPath.cgPath
     }
 }
 
 // MARK: Extensions
 
 extension CALayer {
-    func applyAnimation(animation: CABasicAnimation) {
+    func applyAnimation(_ animation: CABasicAnimation) {
         let copy = animation.copy() as? CABasicAnimation ?? CABasicAnimation()
         if  copy.fromValue == nil,
-            let presentationLayer = presentationLayer() {
-            copy.fromValue = presentationLayer.valueForKeyPath(copy.keyPath ?? "")
+            let presentationLayer = presentation() {
+            copy.fromValue = presentationLayer.value(forKeyPath: copy.keyPath ?? "")
         }
-        addAnimation(copy, forKey: copy.keyPath)
+        add(copy, forKey: copy.keyPath)
         performWithoutAnimation {
             self.setValue(copy.toValue, forKeyPath:copy.keyPath ??  "")
         }
     }
     
-    func performWithoutAnimation(closure: Void -> Void) {
+    func performWithoutAnimation(_ closure: (Void) -> Void) {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         closure()
@@ -219,26 +221,26 @@ extension CALayer {
 extension CGPath {
     //scaling :http://www.google.com/url?q=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F15643626%2Fscale-cgpath-to-fit-uiview&sa=D&sntz=1&usg=AFQjCNGKPDZfy0-_lkrj3IfWrTGp96QIFQ
     //nice answer from David Rönnqvist!
-    class func rescaleForFrame(path: CGPath, frame: CGRect) -> CGPath {
-        let boundingBox            = CGPathGetBoundingBox(path)
-        let boundingBoxAspectRatio = CGRectGetWidth(boundingBox)/CGRectGetHeight(boundingBox)
-        let viewAspectRatio        = CGRectGetWidth(frame)/CGRectGetHeight(frame)
+    class func rescaleForFrame(_ path: CGPath, frame: CGRect) -> CGPath {
+        let boundingBox            = path.boundingBox
+        let boundingBoxAspectRatio = boundingBox.width/boundingBox.height
+        let viewAspectRatio        = frame.width/frame.height
         
         var scaleFactor: CGFloat = 1.0
         if (boundingBoxAspectRatio > viewAspectRatio) {
-            scaleFactor = CGRectGetWidth(frame)/CGRectGetWidth(boundingBox)
+            scaleFactor = frame.width/boundingBox.width
         } else {
-            scaleFactor = CGRectGetHeight(frame)/CGRectGetHeight(boundingBox)
+            scaleFactor = frame.height/boundingBox.height
         }
         
-        var scaleTransform = CGAffineTransformIdentity
-        scaleTransform     = CGAffineTransformScale(scaleTransform, scaleFactor, scaleFactor)
-        scaleTransform     = CGAffineTransformTranslate(scaleTransform, -CGRectGetMinX(boundingBox), -CGRectGetMinY(boundingBox))
-        let scaledSize     = CGSizeApplyAffineTransform(boundingBox.size, CGAffineTransformMakeScale(scaleFactor, scaleFactor))
-        let centerOffset   = CGSizeMake((CGRectGetWidth(frame)-scaledSize.width)/(scaleFactor*2.0), (CGRectGetHeight(frame)-scaledSize.height)/(scaleFactor*2.0))
-        scaleTransform     = CGAffineTransformTranslate(scaleTransform, centerOffset.width, centerOffset.height)
+        var scaleTransform = CGAffineTransform.identity
+        scaleTransform     = scaleTransform.scaledBy(x: scaleFactor, y: scaleFactor)
+        scaleTransform     = scaleTransform.translatedBy(x: -boundingBox.minX, y: -boundingBox.minY)
+        let scaledSize     = boundingBox.size.applying(CGAffineTransform(scaleX: scaleFactor, y: scaleFactor))
+        let centerOffset   = CGSize(width: (frame.width-scaledSize.width)/(scaleFactor*2.0), height: (frame.height-scaledSize.height)/(scaleFactor*2.0))
+        scaleTransform     = scaleTransform.translatedBy(x: centerOffset.width, y: centerOffset.height)
         
-        if let resultPath = CGPathCreateCopyByTransformingPath(path, &scaleTransform) {
+        if let resultPath = path.copy(using: &scaleTransform) {
             return resultPath
         }
         

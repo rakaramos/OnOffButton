@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = 'OnOffButton'
-  s.version      = '1.3'
+  s.version      = '1.4'
   s.summary      = 'Custom On/Off UIButton'
 
   s.description  = <<-DESC

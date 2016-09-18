@@ -6,7 +6,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func changeButtonState(sender: OnOffButton) {
+    @IBAction func changeButtonState(_ sender: OnOffButton) {
         sender.checked = !sender.checked
     }
 }
