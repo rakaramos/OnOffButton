@@ -50,7 +50,7 @@ public class OnOffButton: UIButton {
     private let onStrokeEnd : CGFloat   = 0.20
     private let offStrokeStart: CGFloat = 0.268
     private let offStrokeEnd: CGFloat   = 1.0
-    private let miterLimit: CGFloat     = 10
+    private let miterLimit: CGFloat     = 15
     
     // MARK: Initialization
     
